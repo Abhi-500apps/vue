@@ -9,7 +9,7 @@
       name:'AbhI',
     data() {
       return {
-        fields:["email"],
+        fields:["email","id"],
         items: [
             {email: "Eliseo@gardner.biz",id: 1,name: "id labore ex et quam laborum"},
             {email: "Jayne_Kuhic@sydney.com",id: 2,name: "quo vero reiciendis velitsimiliqueearum"},
