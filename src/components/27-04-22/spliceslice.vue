@@ -27,7 +27,7 @@ export default {
       // console.log(this.replace)
     },
     func2() {
-      this.result = this.num.slice(2, 7);
+      this.result = this.num.slice(3, 7);
       return this.result;
     },
   },
