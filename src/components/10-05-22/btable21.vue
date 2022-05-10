@@ -24,7 +24,6 @@
     <b-table striped hover v-model="value" :items="items" :fields="fields" small class='w-75'></b-table>
   </div>
 </template>
-
 <script>
 export default {
   name: "AbhI",
@@ -41,7 +40,7 @@ export default {
     };
   },
   methods: {
-    clickme() {
+    fun() {
       this.items.push({
         productname: document.getElementById("name").value,
         productprice: document.getElementById("price").value,
