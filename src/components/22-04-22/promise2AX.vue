@@ -8,7 +8,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "VenkY",
+  name: "AbhI",
   data() {
     return {
       res: "",
@@ -16,9 +16,7 @@ export default {
   },
   methods: {
     fun() {
-      new Promise((rejectionFun) => {
-        axios
-          .get("http://universities.hipolabs.com/search?country=")
+      new Promise((rejectionFun) => {axios.get("http://universities.hipolabs.com/search?country=")
 
           .then((response) => {
             this.res = response;

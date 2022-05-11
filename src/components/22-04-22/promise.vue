@@ -22,7 +22,7 @@ fun(){
 var promise = new Promise(function(resolve, reject) {
 const x = "mantra technology";
 const y = "mantra technolo11";
-if(x === y) {
+if(x == y) {
 	resolve();
 } else {
 	reject();

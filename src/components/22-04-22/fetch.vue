@@ -63,7 +63,7 @@ export default {
 
 <b-form-input v-model="value" placeholder="Enter country name"></b-form-input>
 
-<b-table striped hover :items="posts" :fields="fields"></b-table>
+:items="items" :fields="fields"
 
 </div>
 
@@ -77,11 +77,9 @@ export default {
   data() {
     return {
       posts: " ",
-
       fields: ["name", "country", "web_pages"],
     };
   },
-
   methods: {
     async getData() {
       //try{
@@ -102,9 +100,9 @@ export default {
     },
   },
 
-  created() {
-    this.getData();
-  },
+  // created() {
+  //   this.getData();
+  // },
 };
 </script>
 

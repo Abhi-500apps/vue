@@ -6,7 +6,7 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
-        </tr>
+        </tr> 
         <tr v-for="table in table" :key="table.id">
           <td>{{ table.name }}</td>
           <td>{{ table.description }}</td>

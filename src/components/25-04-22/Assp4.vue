@@ -12,7 +12,7 @@ export default {
     return {
       name: "Abhishek",
       number: "22 ",
-      massage: ""
+      message: ""
     
 
     };

@@ -1,16 +1,17 @@
 <template>
   <div class="overflow-auto">
       <h1>welcome to upl,pagination & fetch</h1>
-      
-  
-
+     
+ 
       <button @click="fun()">urlp1</button>
+      
     <b-pagination
       v-model="currentPage"
       :total-rows="rows"
       :per-page="perPage"
       aria-controls="my-table"
     ></b-pagination>
+      
 
     <p class="mt-3">Current Page: {{ currentPage }}</p>
     <b-table id="my-table" striped hover 
