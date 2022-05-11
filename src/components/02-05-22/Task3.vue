@@ -17,7 +17,7 @@ export default {
   methods: {
     remove() {
       console.log((this.array = [...new Set(this.array)]));
-    },
-  },
+    }
+  }
 };
 </script>

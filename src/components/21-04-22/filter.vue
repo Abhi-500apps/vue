@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     func() {
-      const value = this.arr.filter((shek) => {
+      const value = this.array1.filter((shek) => {
         console.log(typeof Number(this.res));
         return shek.name.includes(this.res);
       });

@@ -8,18 +8,21 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import { BootstrapVue} from 'bootstrap-vue'
+import { BootstrapVue } from 'bootstrap-vue'
 
+import { VBScrollspyPlugin } from 'bootstrap-vue'
 
- Vue.use(BootstrapVue)
+Vue.use(VBScrollspyPlugin)
 
- Vue.config.productionTip = false
+Vue.use(BootstrapVue)
+
+Vue.config.productionTip = false
 
 let vueRoute = new Vue({
 
-router,
+    router,
 
-render: h => h(App),
+    render: h => h(App),
 
 }).$mount('#app')
 

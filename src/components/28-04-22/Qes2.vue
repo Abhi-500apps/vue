@@ -7,12 +7,16 @@
 
       <b-button variant="primary" @click="getData" id="sample">Search</b-button>
 
-      <b-pagination
+      <!-- <b-pagination
         v-model="currentPage"
         :total-rows="rows"
         :per-page="perPage"
         aria-controls="my-table"
-      ></b-pagination>
+      ></b-pagination> -->
+       <div class="mt-3">
+      <h6>Large Pills</h6>
+      <b-pagination v-model="currentPage" pills :total-rows="rows" size="lg"></b-pagination>
+    </div>
 
       <b-row cols-md="7">
         <b-table

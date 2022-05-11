@@ -12,7 +12,7 @@ export default {
     data() {
     return {
 
-     // fields:["name", "country"]
+    //  fields:["name", "country"]
       
     };
   },
@@ -22,8 +22,8 @@ export default {
         console.log(response);
     },
   },
-  created() {
-    console.log(this.posts);
-  },
+  // created() {
+  //   console.log(this.posts);
+  // },
 };
 </script>
