@@ -29,14 +29,13 @@ export default {
         ],
             StudentDetails:{
                  studentid : '' ,
-                 date : 'DD-MM-',
+                 date : ' ',
                  subject : '', 
                  marks : '',
                  remarks : ''
             },
             students:[]
-            
-          
+                      
         }
         
     },
