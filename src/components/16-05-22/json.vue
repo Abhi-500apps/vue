@@ -9,10 +9,7 @@
     Marks:<b-form-input  v-model="StudentDetails.marks" type="number" min=0 max=100 required></b-form-input>
     Remarks:<b-form-input v-model="StudentDetails.remarks" type="text" placeholder="Text Area" required></b-form-input>
     </b-form><br>
-    <b-button type="submit" variant="success" @click="fun()">Submit</b-button>async mounted(){
-    await this.fun1();
-
-   },
+    <b-button type="submit" variant="success" @click="fun()">Submit</b-button>
     </b-card>
     </center>
     <p id="demo"></p>
@@ -32,7 +29,7 @@ export default {
         ],
             StudentDetails:{
                  studentid : '' ,
-                 date : '',
+                 date : 'DD-MM-',
                  subject : '', 
                  marks : '',
                  remarks : ''
@@ -54,14 +51,14 @@ export default {
     },
     
 },
-async created(){
+ async created(){
     await this.fun1();
 
    },
 
 
   
-}
+};
 </script>
 
 
