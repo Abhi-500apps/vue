@@ -8,45 +8,41 @@
         type="success"
         variant="success"
         style="width: 20rem; heigth: 600px"
-        class="w-25"
-       
-      >
-        <b-navbar-nav>
+        class="w-25"><b-navbar-nav>
           <b-nav-item-dropdown text="Home" right>
             <b-dropdown-item href="#">Show All</b-dropdown-item>
             <b-dropdown-item href="#">Clear All</b-dropdown-item>
             <b-dropdown-item href="#">logout</b-dropdown-item>
-
-            <!-- <b-nav-item-dropdown text="User" left>
-        <b-dropdown-item href="#">Account</b-dropdown-item>
-        <b-dropdown-item href="#">Settings</b-dropdown-item> -->
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-navbar>
     </center>
-
     <center>
-      <b-card style="width: 30rem; heigth: 600px" class="w-25"
-        ><br /><br /><br />
-        
-         <b>Email:</b><b-form-input type="email"  v-model="form.Email" id="Email"  placeholder= "Enter your Email" required class="w-75"></b-form-input><br><br><br /><br />
+      <b-card style="width: 30rem; heigth: 600px" class="w-25"><br /><br /><br />
+        <b>Email:</b><b-form-input type="email"  v-model="form.Email" id="Email"  placeholder= "Enter your Email" required class="w-75"></b-form-input><br><br><br /><br />
         <b>Password:</b><b-form-input type="text" v-model="form.password" id="password" placeholder="Password"  required class="w-75"></b-form-input><br /><br /><br />
-        <b-button type="sumbit" @click="fun()" valriant = "success"  >Sign Up</b-button><br /><br /> 
-       
-      </b-card>
-       
-    </center>
+        <router-link to='/login1'>
+        <b-button type="sumbit" @click="fun()" valriant = "success"  >SignUp</b-button><br /><br /> 
+        </router-link>
+       </b-card>
+       <Login1 :/> 
+      </center>
   </div>
 </template>
 
 <script>
+// import login1 from './login1.vue'
 export default {
   name: "GrocreyData",
+  // components:{
+  //   login1
+  // },
   data() {
     return {
       form:{
       Email:' ',
-      password:' '
+      password:' ',
+    
       }
     
     }
@@ -66,7 +62,6 @@ export default {
       sessionStorage.setItem("userName", this.form.Email);
       sessionStorage.setItem("password", this.form.password);
     },
-  
   },
 };
 </script>
