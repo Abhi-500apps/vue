@@ -1,51 +1,68 @@
 <template>
   <div>
-    <center>
-      <b-form class="w-50">
-        Title:<b-form-input>Notepad</b-form-input> 
-        Content:<b-form-textarea></b-form-textarea ></b-form><br />
-    </center>
-    <b-button type="submit" @click="newPad" variant="success"><b>+</b></b-button
-    >&nbsp;
-    <b-button type="submit" @click="savePad" variant="primary">Save</b-button
-    >&nbsp;
-    <b-button type="submit" @click="deletePad" variant="danger"
-      >Delete</b-button
-    >
+    <b-form @submit="save">
+      <div>
+        <b-button class="button1" type="submit">save</b-button><br />
+        <b-button class="button" v-b-toggle.sidebar-1>home</b-button>
+        <b-sidebar id="sidebar-1" title="Menu" shadow>
+          <div class="px-3 py-2">
+            <br /><br /><br /><br />
+            <b-button @click="retrieve()">Reteieve</b-button>&nbsp;
+            <b-button @click="clearAll()">ClearAll</b-button><br /><br />
+            <button>
+              <router-link to="/loginp">logout</router-link></button><br />
+            <br />
+          </div>
+        </b-sidebar>
+      </div>
+      <br />
+      <b-form-textarea
+        :maxlength="25"
+        v-model="form.text"
+        rows="5"
+        placeholder="enter your text here"
+        required
+      ></b-form-textarea>
+    </b-form>
   </div>
 </template>
 <script>
 export default {
-  name: "HomePage",
-
+  name: "textArea",
   data() {
     return {
-      page: [],
-      pageNo: 0,
+      form: {
+        text: "",
+      },
+      result: "",
     };
   },
   methods: {
-    newPad() {
-      this.page.push({
-        Title: " ",
-        Content: " ",
-      });
-      this.pageNo = this.page.length - 1;
+    save() {
+      alert("do you want to save");
+      localStorage.setItem("text", this.form.text);
     },
-    changePad(pageNo) {
-      this.pageNo = pageNo;
+    clearAll() {
+      console.log("hello");
+      localStorage.clear();
     },
-
-    savePad() {},
-
-    deletePad() {
-      this.page.splice(this.pageNo, 1);
-      this.pageNo = Math.max(this.index - 1, 0);
+    retrieve() {
+      var x = localStorage.getItem("text");
+      this.result = x;
+      console.log(x);
     },
   },
 };
 </script>
-
-
-
-
+<style scoped>
+.button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.button1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</style>
