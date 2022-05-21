@@ -9,7 +9,7 @@
         variant="success"
         style="width: 20rem; heigth: 600px"
         class="w-25"><b-navbar-nav>
-          <b-nav-item-dropdown text="Home" right>
+          <b-nav-item-dropdown text="Home" right> // using bootstrap
             <b-dropdown-item href="#">Show All</b-dropdown-item>
             <b-dropdown-item href="#">Clear All</b-dropdown-item>
             <b-dropdown-item href="#">logout</b-dropdown-item>
@@ -20,12 +20,12 @@
     <center>
       <b-card style="width: 30rem; heigth: 600px" class="w-25"><br /><br /><br />
         <b>Email:</b><b-form-input type="email"  v-model="form.Email" id="Email"  placeholder= "Enter your Email" required class="w-75"></b-form-input><br><br><br /><br />
-        <b>Password:</b><b-form-input type="text" v-model="form.password" id="password" placeholder="Password"  required class="w-75"></b-form-input><br /><br /><br />
+        <b>Password:</b><b-form-input type="text" v-model="form.password" id="password" placeholder="Password"  required class="w-75"></b-form-input><br /><br /><br />  //user secure data
         <router-link to='/login1'>
-        <b-button type="sumbit" @click="fun()" valriant = "success"  >SignUp</b-button><br /><br /> 
+        <b-button type="sumbit" @click = "fun()" valriant = "success"  >SignUp</b-button><br /><br /> 
         </router-link>
        </b-card>
-       <Login1 :/> 
+       <Login1 /> 
       </center>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       form:{
-      Email:' ',
+      Email:' ', // user input deatails
       password:' ',
     
       }
@@ -55,11 +55,11 @@ export default {
       let date = new Date();
       var expire = new Date();
       expire.setTime(date.getTime() + 24 * 60 * 60 * 1000);
-      document.cookie = "username=" + username.value + ";path=/" + ";expires" + expire.toUTCString();
+      document.cookie = "username=" + username.value + ";path=/" + ";expires" + expire.toUTCString(); // using cookie
       document.cookie = "password=" + encodeURI(password.value) + ";path=/" + ";expires" + expire.toUTCString();
-      localStorage.setItem("username", this.form.Email);
+      localStorage.setItem("username", this.form.Email); // To store the data local_storage
       localStorage.setItem("pasword", this.form.password);
-      sessionStorage.setItem("userName", this.form.Email);
+      sessionStorage.setItem("userName", this.form.Email); // To store the data sessionStorage
       sessionStorage.setItem("password", this.form.password);
     },
   },

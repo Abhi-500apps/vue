@@ -19,9 +19,8 @@
         </b-navbar-nav>
       </b-navbar>
     </center>
-
     <center>
-      <b-card style="width: 90rem; heigth: 600px" class="w-25"
+      <b-card style="width: 90rem; heigth: 600px" class="w-25" id="card"
         ><br /><br /><br />
         <b-card-text> New tabs add </b-card-text><br><br><br/><br><br/><br/><br/><br><br><br><br>
 <router-link to=/login2>
@@ -36,13 +35,11 @@ export default {
   name: "Grocrey-Data",
   data() {
     return {
-  link:'/login1'
+      link: "/login1",
     };
   },
   methods: {
-    fun1(){
-
-    }
+    fun1() {},
   },
 };
 </script>
