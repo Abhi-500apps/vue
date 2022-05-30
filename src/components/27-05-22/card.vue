@@ -18,16 +18,9 @@
           </b-iconstack>
           <h1 style="color: white"><b> Vue</b></h1>
           &nbsp;
-
           <b-card id="bcard">Login Name: Abhishek_Kudupudi</b-card>
-
-          <!-- <b-container align="left">
-            <b-card bg-variant="black" text-variant="primary" id="card"
-              >Login Name: Abhishek_Kudupudi</b-card
-            >
-          </b-container> -->
         </b-navbar-nav>
-        </b-navbar>
+      </b-navbar>
     </center>
     <br /><br />
     <div class="text-left">
@@ -36,25 +29,19 @@
         variant="success"
         stacked
         icon="check"
-        id="button1"
+        id="Title"
         >Add Details</b-button
       ><br /><br />
     </div>
 
     <b-modal id="modal-1" title="Add_details" hide-footer>
-      <b-iconstack font-scale="2">
-        <b-icon stacked icon="square"></b-icon>
-        <b-icon stacked icon="check"></b-icon>
-      </b-iconstack>
-      <!-- <b-tab v-for="i in card" :key="'card-' + i" :title="'card ' + i">
-          card contents {{ i }} -->
-      <b-form @click="On_Submit()">
+      <b-form @submit="on_submit" >
         Name:<b-form-input
           type="text"
           placeholder="Name"
           v-model="user.name"
           required
-        ></b-form-input>
+        ></b-form-input> 
         Age:<b-form-input
           type="number"
           placeholder="Age"
@@ -69,62 +56,96 @@
         >
         </b-form-select
         ><br />
-        Date of Birth:<b-form-input
+        Date_of_Birth:<b-form-input
           type="date"
           v-model="user.date_of_birth"
           required
+         
         ></b-form-input>
-        <b-button type="Submit">Submit</b-button>
-        <b-button type="Reset" variant="danger"> Reset</b-button>&nbsp;
+        <b-button type="submit" id="save">
+          <b-icon
+            icon="check-square"
+            v-b-tooltip.hover.right
+            text="save"
+            scale="2"
+            variant="success"
+            shift-h="-2"
+            shift-v="-1"
+          ></b-icon>
+        </b-button>
+
+        <!-- <b-button type="reset" variant="danger"> Reset</b-button>&nbsp; -->
       </b-form>
     </b-modal>
-    <b-card class="w-25"><p id="user"></p></b-card>
+    <card1 :result="result" @delete="Delete(item)"></card1>
   </div>
 </template>
 <script>
+import card1 from "./card1.vue";
+import axios from "axios";
+//import moment from "moment";
+
 export default {
-  name: "User_Data",
+  name: "user_data",
+  components: {
+    card1,
+  },
   data() {
     return {
       user: {
-        name: " ",
-        age: " ",
-        gender: " ",
+        name: "",
+        age: "",
+        gender: "",
+        date_of_birth: " ",
       },
-      card: [],
-      cardCounter: [0],
+      // src="/home/agile/Downloads/male1.jpeg"
+      // src="/home/agile/Downloads/Female.png"
       options: [
-        { value: "Male", text: "Male" },
-        { value: "Female", text: "Female" },
+        { value: "options", text: " options", disabled: true },
+        { value: "Male", text: "Male"  },
+        { value: "Female", text: "Female"  },
       ],
-      // cardData:[{
-      //     name: " ",
-      //     age: " ",
-      //     gender: " ",
-      //      date_of_brith:"" ,
-      //      image:" "
-      //   }],
+      result: [],
+      show: false,
+      editedIndex: -1,
     };
   },
-
   methods: {
-    On_Submit() {
-      setTimeout(() => {
-        // using setTimeout
-        document.getElementById("user").innerHTML = JSON.stringify(this.user);
-      }, 10000);
+    on_submit() {
+      console.log(this.user);
+      this.result.push(this.user);
+      this.close();
     },
-
-    // Add_Details(x) {
-    //   for (let i = 0; i < this.card.length; i++) {
-    //     if (this.card[i] === x) {
-    //       this.card.splice(i, 1);
-    //     }
-    //   }
-    // },
-    // newTab() {
-    //   this.card.push(this.cardCounter++);
-    // },
+    close() {
+      this.show = false;
+    },
+    edit(item) {
+      this.Show = true;
+      this.user = this.result.indexOf(item);
+      this.user = Object.assign({}, item);
+    },
+    Delete(item) {
+      this.item = "";
+      this.$bvModal
+        .msgBoxConfirm("Are you sure to delete details.", {
+          title: "Delete Details",
+          size: "sm",
+          buttonSize: "sm",
+          okVariant: "primary",
+          okTitle: "YES",
+          cancelVariant: "danger",
+          cancelTitle: "NO",
+          hideHeaderClose: false,
+          centered: true,
+        })
+        .then((value) => {
+          if (value) {
+            const index = this.result.indexOf(item);
+            this.result.splice(index, 1);
+            axios.delete(this.endpoint + "/" + value.id);
+          } else return;
+        });
+    },
   },
 };
 </script>
@@ -133,6 +154,22 @@ export default {
   position: relative;
   left: 1050px;
 }
+#card {
+  right: -1450px;
+  height: 50px;
+}
+#Title {
+  position: absolute;
+  left: 50px;
+}
+#save {
+  position: relative;
+  bottom: 340px;
+  width: 40px;
+  height: 40px;
+  left: 400px;
+}
 </style>
+
 
 
