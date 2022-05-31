@@ -42,7 +42,7 @@
 </template>
 <script>
 export default {
-  name: "DataCard",
+  name: "Data_Card",
 
   props: {
     result: {
