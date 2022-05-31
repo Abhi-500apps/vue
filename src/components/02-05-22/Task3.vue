@@ -12,11 +12,12 @@ export default {
   data(){
     return {
       array: [1, 1, 2, 2, 2, 3, 4, 3, 2],
+      
     }
   },
   methods: {
     remove() {
-      console.log((this.array = [...new Set(this.array)]));
+      document.write((this.array = [...new Set(this.array)]));
     }
   }
 };

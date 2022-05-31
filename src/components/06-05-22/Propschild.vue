@@ -25,5 +25,5 @@ export default {
 //     alert("Child1 Progrom")
 //     },
 //   },
-// };
+};
 </script>

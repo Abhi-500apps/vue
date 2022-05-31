@@ -39,6 +39,6 @@ export default {
 //       alert("Parent");
 //     },
 //   },
-// };
+};
 </script> 
 

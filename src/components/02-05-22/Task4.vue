@@ -20,7 +20,7 @@ export default {
             return !!input.pop;
             }
             this.res=
-            console.log(isArray(''));
+            // console.log(isArray(''));
             console.log(isArray([1, 2, 4, 0]));
 
         }

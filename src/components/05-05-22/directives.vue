@@ -3,7 +3,7 @@
       
     <b-card no-body>
       <b-nav pills card-header slot="header" v-b-scrollspy:nav-scroller>
-        <b-nav-item href="#fat" @click="scrollIntoView">@fat</b-nav-item>
+        <b-nav-item href="#fat" @click="scrollIntoView" class='w-50'>@fat</b-nav-item>
         <b-nav-item href="#mdo" @click="scrollIntoView">@mdo</b-nav-item>
         <b-nav-item-dropdown text="Dropdown 1,2,3" right-alignment>
           <b-dropdown-item href="#one" @click="scrollIntoView"

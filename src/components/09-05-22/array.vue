@@ -10,7 +10,7 @@ export default {
 name:"ArraY",
 data(){
     return{
-array1:[1,2,3,1],
+    array1:[1,2,3,1],
     }
     },
     methods:{
@@ -21,7 +21,3 @@ array1:[1,2,3,1],
     }
 }
 </script>
-
-<style>
-
-</style>

@@ -1,7 +1,6 @@
 <template>
   <div>
     <h5>Question-7</h5>
-
     <button @click="Duplicates">Click!</button>
   </div>
 </template>
@@ -16,9 +15,8 @@ export default {
   },
   methods: {
     Duplicates() {
-      this.arr = this.array.filter(
-        (item, index) => this.array.indexOf(item) === index
-      );
+      this.arr = this.array.filter((item, index) =>{ this.array.indexOf(item) === index
+      });
       console.log(this.arr);
     },
   },
