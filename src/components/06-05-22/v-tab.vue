@@ -116,26 +116,13 @@
     >
   </div>
 </template>
-
-</b-tabs>
-
-</b-card>
-
-</div>
-
-</template>
-
-
 <script>
 export default {
-  name: "SaI",
-
+  name: "AbhI",
   data() {
     return {
       tabs: [],
-
       tabCounter: 0,
-
       names: [
         {
           first_name: "",
@@ -145,7 +132,6 @@ export default {
           email_id: "",
         },
       ],
-
       fields: [
         "first_name",
         "last_name",
@@ -154,22 +140,16 @@ export default {
         "Cpassword",
         "Email",
       ],
-
       val: "",
-
       val1: "",
-
       val2: "",
-
       val3: "",
     };
   },
-
   methods: {
     newTab() {
       this.tabs.push(this.tabCounter++);
     },
-
     closeTab(x) {
       for (let i = 0; i < this.tabs.length; i++) {
         if (this.tabs[i] === x) {
@@ -177,42 +157,25 @@ export default {
         }
       }
     },
-
     fun() {
       this.names.push({
         first_name: this.val,
-
         last_name: this.val1,
-
         city_name: this.val2,
-
         email_id: this.val3,
       });
-
-      this.val = "";
-
-      this.val1 = "";
-
-      this.val2 = "";
-
-      this.val3 = "";
+      // this.val = "";
+      // this.val1 = "";
+      // this.val2 = "";
+      // this.val3 = "";
     },
-
     fun1() {
       this.names.pop({
         first_name: this.val,
-
         last_name: this.val1,
-
         city_name: this.val2,
-
         email_id: this.val3,
       });
-
-      this.val = "";
-      this.val1 = "";
-      this.val2 = "";
-      this.val3 = "";
     },
   },
 };

@@ -6,12 +6,11 @@
 <script>
 import EmitChild from './Emitchild.vue'
 export default {
-  name: "emiT",
+  name: "EmitParent",
   components: { 
       EmitChild 
   },
-  methods:
-   {
+  methods:{
     fun()
     {
       document.write("sample check emit");

@@ -35,13 +35,13 @@
     </div>
 
     <b-modal id="modal-1" title="Add_details" hide-footer>
-      <b-form @submit="on_submit" >
+      <b-form @submit="on_submit">
         Name:<b-form-input
           type="text"
           placeholder="Name"
           v-model="user.name"
           required
-        ></b-form-input> 
+        ></b-form-input>
         Age:<b-form-input
           type="number"
           placeholder="Age"
@@ -54,13 +54,12 @@
           v-model="user.gender"
           :options="options"
         >
-        </b-form-select
+          <!-- <image-src="/home/agile/Downloads/Female.png"></image> --> </b-form-select
         ><br />
         Date_of_Birth:<b-form-input
           type="date"
           v-model="user.date_of_birth"
           required
-         
         ></b-form-input>
         <b-button type="submit" id="save">
           <b-icon
@@ -73,11 +72,17 @@
             shift-v="-1"
           ></b-icon>
         </b-button>
-
-        <!-- <b-button type="reset" variant="danger"> Reset</b-button>&nbsp; -->
       </b-form>
     </b-modal>
-    <card1 :result="result" @delete="Delete(item)"></card1>
+    <card1 :result="result" @delete="Delete(item)">
+      <b-img
+        v-if="user.gender == 'male'"
+        src="https://www.fillmurray.com/640/360"
+        height="60px;"
+        width="60px;"
+      ></b-img>
+      <!-- <b-img v-else src="https://www.fillmurray.com/640/360" height= 60px; width=60px/></b-img> -->
+    </card1>
   </div>
 </template>
 <script>
@@ -86,7 +91,7 @@ import axios from "axios";
 //import moment from "moment";
 
 export default {
-  name: "user_data",
+  name: "UserData",
   components: {
     card1,
   },
@@ -98,16 +103,16 @@ export default {
         gender: "",
         date_of_birth: " ",
       },
-      // src="/home/agile/Downloads/male1.jpeg"
-      // src="/home/agile/Downloads/Female.png"
       options: [
         { value: "options", text: " options", disabled: true },
-        { value: "Male", text: "Male"  },
-        { value: "Female", text: "Female"  },
+        { value: "Male", text: "Male" },
+        { value: "Female", text: "Female" },
       ],
       result: [],
       show: false,
       editedIndex: -1,
+      src: "",
+      src1: "",
     };
   },
   methods: {
@@ -146,6 +151,14 @@ export default {
           } else return;
         });
     },
+    // select() {
+    //   if(this.options.value==this.male)
+    //    <img-src="https://www.fillmurray.com/640/360";></img->
+
+    //     else if(this.options.value==this.female)
+
+    //     src="https://www.pinterest.com/pin/lorem-ipsum-acedia-photo--595601119470032379/";
+    //   }
   },
 };
 </script>
@@ -157,10 +170,6 @@ export default {
 #card {
   right: -1450px;
   height: 50px;
-}
-#Title {
-  position: absolute;
-  left: 50px;
 }
 #save {
   position: relative;

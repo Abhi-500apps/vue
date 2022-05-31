@@ -39,10 +39,10 @@ import Try4 from '../components/28-04-22/axios00'
 import Try5 from '../components/28-04-22/Qes1'
 import Try6 from '../components/28-04-22/Qes2'
 import Try7 from '../components/28-04-22/Qes3'
-import Try8 from '../components/02-05-22/Task9'
-import Try9 from '../components/02-05-22/Task3'
-import Try10 from '../components/02-05-22/Task5'
-import Try11 from '../components/02-05-22/Task6'
+// import Try8 from '../components/02-05-22/Task9'
+ import Task3 from '../components/02-05-22/Task3'
+// import Try10 from '../components/02-05-22/Task5'
+// import Try11 from '../components/02-05-22/Task6'
 import Try12 from '../components/02-05-22/Task1'
 import Try13 from '../components/02-05-22/Task2'
 import Try14 from '../components/02-05-22/Task7'
@@ -52,20 +52,40 @@ import Try17 from '../components/02-05-22/Task4'
 import Try18 from '../components/02-05-22/Task8'
 import Try19 from '../components/05-05-22/directives'
 import Try20 from '../components/05-05-22/computed'
-import Try21 from '../components/05-05-22/scrollspy'
-//import Try22 from '../components/06-05-22/v-tab'
-// import Try23 from '../components/06-05-22/Emitparent'
+//import Try21 from '../components/05-05-22/scrollspy'
+import Try22 from '../components/06-05-22/v-tab'
+import Try23 from '../components/06-05-22/Emitparent'
 // import Try24 from '../components/06-05-22/Propsparent'
 // import Try25 from '../components/09-05-22/urlp1'
 // import Try26 from '../components/09-05-22/urlp2'
 // import Try27 from '../components/09-05-22/new'
-// import Try28 from '../components/09-05-22/array'
+import Try28 from '../components/09-05-22/array'
 import Try29 from '../components/10-05-22/created'
 import Try30 from '../components/10-05-22/btable21'
 import Try31 from '../components/10-05-22/watch'
 // import Try32 from '../components/11-05-22/str'
 import Try33 from '../components/11-05-22/setTime'
 import Try34 from'../components/11-05-22/str13'
+import Try35 from'../components/11-05-22/backspace'
+import Try36 from'../components/11-05-22/nextTick'
+import Try37 from'../components/12-05-22/EmitP1'
+import Try38 from '../components/12-05-22/pro'
+import Try39 from '../components/12-05-22/value'
+// import Try40 from '../components/13-05-22/reorder'
+import json  from '../components/16-05-22/json'
+import day1 from '../components/18-05-22/day1'
+import day2 from '../components/18-05-22/day2'
+import login1 from '../components/19-05-22/login1'
+import login2 from '../components/19-05-22/login2'
+import month from '../components/23-05-22/month'
+import password from '../components/23-05-22/password'
+import pEmit from '../components/26-05-22/pEmit'
+import card from '../components/27-05-22/card'
+// import card1 from '../components/27-05-22/card1'
+import tabledata from '../components/29-05-22/tabledata'
+
+
+
 Vue.use(Router)
 const routes = [
 
@@ -107,33 +127,51 @@ const routes = [
     { path: '/Qes1', name: "axios1", component: Try5 },
     { path: '/Qes2', name: "axios2", component: Try6 },
     { path: '/Qes3', name: " axios3", component: Try7 },
-    { path: '/Task9', name: "a", component: Try8 },
-    { path: '/Task3', name: "set", component: Try9 },
-    { path: '/Task5', name:"forEach",component:Try10},
-    { path: '/Task6', name:"try", component:Try11},
-    { path: '/Task1', name:"try0",component:Try12},
+    { path: '/Task9', name: "a",component:Try12},
     { path:'/Task2', name:"try1", component:Try13},
     { path: '/Task7', name:"try2", component:Try14},
     { path: '/crud', name:"try3",component:Try15},
     { path:'/Task10',name:"try4",component:Try16},
+    { path:'/TasK3',name:"Task3",component:Task3},
     { path:'/Task4',name:"try5",component:Try17},
     { path:'/Task8',name:"try6",component:Try18},
     { path:'/directives',name:"try7",component:Try19},
     { path:'/computed',name:"try8",component:Try20},
-    { path:'/scrollspy',name:"try9",component:Try21},
-    //{ path:'/v-tab',name:"try10",component:Try22},
-    // { path:'/Emitparent',name:"try11",component:Try23},
+    //{ path:'/scrollspy',name:"try9",component:Try21},
+    { path:'/v-tab',name:"try10",component:Try22},
+    { path:'/Emitparent',name:"try11",component:Try23},
     // { path:'/Propsparent',name:"try12",component:Try24},
     // { path:'/urlp1',name:"try13",component:Try25},
     // { path:'/urlp2',name:"try14",component:Try26},
     // { path:'/new',name:"try15",component:Try27},
-    // { path:'/array',name:"try16",component:Try28},
+    { path:'/array',name:"try16",component:Try28},
     { path:'/created',name:"try17",component:Try29},
     { path:'/btable21',name:"try18",component:Try30},
     { path:'/watch',name:"try19",component:Try31},
     // { path:'/str',name:"try20",component:Try32},
     { path:'/setTime',name:"try21",component:Try33},
-    { path:'/str13',name:'try21',component:Try34}
+    { path:'/str13',name:'try21',component:Try34},
+    { path:'/backspace',name:'try22',component:Try35},
+    { path:'/nextTick',name:'try23',component:Try36},
+     { path:'/Emit1',name:'try24',component:Try37},
+    { path:'/pro',name:'try25',component:Try38},
+    { path:'/value',name:'try26',component:Try39},
+    // { path:'/reorder',name:'try27',component:Try40},
+    { path:'/json',name:'json',component:json},
+    { path:'/day1',name:'day1',component:day1},
+    { path:'/day2', name:'day2',component:day2},
+    { path:'/login1',name:'login1',component:login1},
+    { path:'/login2', name:'login2', component:login2},
+    { path:'/password', name:'password',component:password},
+    { path:'/month', name:'month',component:month},
+    { path:'/pEmit', name:'pEmit',component:pEmit},
+    { path:'/card', name:'card' ,component:card},
+
+    // { path:'/card1', name:'card1' ,component:card1},
+    { path:'/tabledata', name:'tabledata',component:tabledata},
+    
+
+    
 
 ]
 let router = new Router({ routes })
