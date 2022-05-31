@@ -16,7 +16,6 @@
         <br />
         <strong>Gender:{{ data.gender }}</strong>
         <br />
-
         <strong>Date_of_birth:{{ data.date_of_birth }}</strong>
         <br />
 
@@ -42,7 +41,7 @@
 </template>
 <script>
 export default {
-  name: "Data_Card",
+  name: "DataCard",
 
   props: {
     result: {

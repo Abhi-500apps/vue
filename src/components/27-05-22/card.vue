@@ -91,7 +91,7 @@ import axios from "axios";
 //import moment from "moment";
 
 export default {
-  name: "User_Data",
+  name: "UserData",
   components: {
     card1,
   },
