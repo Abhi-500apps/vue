@@ -4,7 +4,6 @@
     <h2>welcome</h2>
   </div>
 </template>
-
 <script>
 import sideview from "./sideview.vue"
 export default {
