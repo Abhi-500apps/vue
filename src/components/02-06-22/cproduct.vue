@@ -46,11 +46,11 @@
         ><b>Add <b-icon-plus-circle-fill /></b></b-button
       >&nbsp;
       <b-button  variant="info"
-        @click="Export()"><b>Export<b-icon-arrow-up-short /></b></b-button
+        @click="Export()"><b>Export<b-icon-arrow-down-short /></b></b-button
       >&nbsp;
       <b-button @click="Import()" variant="info"
         ><b
-          >Import<u><b-icon-arrow-down-short /></u></b></b-button
+          >Import<u><b-icon-arrow-up-short /></u></b></b-button
       >&nbsp;
       <b-button @click="multiple()" variant="danger">Multiple-Delete</b-button>
     </div>
@@ -239,7 +239,7 @@ export default {
       //const data = this.tableData;
       const fileName = "TableData";
       const exportType = exportFromJSON.types.csv;
-      exportFromJSON({ data, fileName, exportType });
+        exportFromJSON({ data, fileName, exportType });
     },
   },
 };
