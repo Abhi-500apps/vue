@@ -45,10 +45,10 @@
       <b-button @click="Add()" variant="info"
         ><b>Add <b-icon-plus-circle-fill /></b></b-button
       >&nbsp;
-      <b-button @click="export_product()" variant="info"
-        ><b>Export<b-icon-arrow-up-short /></b></b-button
+      <b-button  variant="info"
+        @click="Export()"><b>Export<b-icon-arrow-up-short /></b></b-button
       >&nbsp;
-      <b-button @click="import_product()" variant="info"
+      <b-button @click="Import()" variant="info"
         ><b
           >Import<u><b-icon-arrow-down-short /></u></b></b-button
       >&nbsp;
@@ -97,7 +97,7 @@
             type="submit"
             v-b-tooltip.hover.left
             title="Save"
-            variant="success"
+            variant="success" 
             ><b-icon-save /></b-button
           >&nbsp;
         </b-form>
@@ -120,6 +120,7 @@
   </div>
 </template>
 <script>
+import exportFromJSON from 'export-from-json'
 export default {
   name: "product_details", //snake case
   props: ["Columns", "formFields"],
@@ -217,6 +218,28 @@ export default {
         reader.onerror = (err) => console.log(err);
         reader.readAsText(this.file);
       }
+    },
+    Export() {
+      const objectToCsv = function (data) {
+        const csvRows = [];
+        const headers = Object.keys(data[0]);
+        csvRows.push(headers.join(","));
+        for (const row of data) {
+          const values = headers.map((header) => {
+            const val = row[header];
+            return `"${val}"`;
+          });
+          csvRows.push(values.join(","));
+        }
+        return csvRows.join("\n");
+      };
+      const data = this.tableData;
+      const csvData = objectToCsv(data);
+      console.log(csvData);
+      //const data = this.tableData;
+      const fileName = "TableData";
+      const exportType = exportFromJSON.types.csv;
+      exportFromJSON({ data, fileName, exportType });
     },
   },
 };

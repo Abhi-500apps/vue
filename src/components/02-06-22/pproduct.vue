@@ -71,7 +71,7 @@ export default {
 </script>
 <style scoped>
 #color {
-  background-color: rgb(129, 28, 218);
+  background-color: rgb(8, 236, 164);
 }
 #Card {
   position: relative;
